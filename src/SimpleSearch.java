@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.util.*;
 
 import searchStrategy.*;
+import searchStrategy.*;
 
 public class SimpleSearch {
     public static void main(String[] args) {
@@ -12,8 +13,8 @@ public class SimpleSearch {
         List<String[]> peopleList = new ArrayList<>();
         Map<String, List<Integer>> indexMap = new LinkedHashMap<>();
 
-        String pathToFile = args[1];
-        // String pathToFile = "C:\\Users\\Pablo\\Desktop\\data.txt";
+        // String pathToFile = args[1];
+        String pathToFile = "C:\\Users\\Pablo\\Desktop\\data.txt";
         File file = new File(pathToFile);
         // Reading file and indexing inputs
         readAndIndexFile(peopleList, indexMap, pathToFile, file);
@@ -29,17 +30,16 @@ public class SimpleSearch {
                     System.out.println();
                     System.out.println("Select a matching strategy: ALL, ANY, NONE");
                     String searchStrategy = scannerLine.nextLine();
-                    StrategySearchImpl strategySearchImpl = null;
-
+                    StrategySearchContext strategySearchImpl = null;
                     switch (searchStrategy) {
                         case "ALL":
-                            strategySearchImpl = new StrategySearchImpl(new SearchAll());
+                            strategySearchImpl = new StrategySearchContext(new SearchAll());
                             break;
                         case "ANY":
-                            strategySearchImpl = new StrategySearchImpl(new SearchAny());
+                            strategySearchImpl = new StrategySearchContext(new SearchAny());
                             break;
                         case "NONE":
-                            strategySearchImpl = new StrategySearchImpl(new SearchNone());
+                            strategySearchImpl = new StrategySearchContext(new SearchNone());
                             break;
                         default:
                             break;
@@ -48,6 +48,7 @@ public class SimpleSearch {
                     System.out.println("Enter a name or email to search all suitable people.");
                     String searchQuery = scannerLine.nextLine();
                     searchQuery = searchQuery.toLowerCase();
+                    System.out.println("\n=== Results ===");
                     strategySearchImpl.search(searchQuery, peopleList, indexMap);
 
                     break;

@@ -3,6 +3,7 @@ package searchStrategy;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import DisplayResult.DisplayResult;
 
 public class SearchAll implements StrategySearch {
     @Override

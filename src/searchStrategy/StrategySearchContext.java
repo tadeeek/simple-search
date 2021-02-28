@@ -3,10 +3,10 @@ package searchStrategy;
 import java.util.List;
 import java.util.Map;
 
-public class StrategySearchImpl {
+public class StrategySearchContext {
     private StrategySearch strategy;
 
-    public StrategySearchImpl(StrategySearch strategy) {
+    public StrategySearchContext(StrategySearch strategy) {
         this.strategy = strategy;
     }
 
