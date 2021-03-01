@@ -2,6 +2,11 @@
 
 Program that let you search for people using 3 search strategies. Project uses the inverted index data structure and design patterns such as Strategy and Template. It also reads data from txt file.
 
+Search strategies:
+ALL - displays lines from file containing all the words from the query.
+ANY - displays lines from file containing at least one word from the query.
+NONT - displays lines from file that do not contain words from the query at all.
+
 ## Table of contents
 
 - [General info](#general-info)

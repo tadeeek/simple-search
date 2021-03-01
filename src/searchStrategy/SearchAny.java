@@ -2,7 +2,7 @@ package searchStrategy;
 
 import java.util.List;
 import java.util.Map;
-import DisplayResult.DisplayResult;
+import displayResult.*;
 
 public class SearchAny implements StrategySearch {
     @Override

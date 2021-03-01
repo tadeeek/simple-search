@@ -1,4 +1,4 @@
-package searchStrategy;
+package displayResult;
 
 public class DisplayResult {
 
