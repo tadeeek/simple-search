@@ -2,9 +2,8 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
-
 import searchStrategy.*;
-import searchStrategy.*;
+import displayResult.*;
 
 public class SimpleSearch {
     public static void main(String[] args) {
@@ -14,11 +13,11 @@ public class SimpleSearch {
         Map<String, List<Integer>> indexMap = new LinkedHashMap<>();
 
         // String pathToFile = args[1];
-        String pathToFile = "C:\\Users\\Pablo\\Desktop\\data.txt";
+        String pathToFile = System.getProperty("user.dir") + "\\src\\data.txt";
         File file = new File(pathToFile);
         // Reading file and indexing inputs
-        readAndIndexFile(peopleList, indexMap, pathToFile, file);
 
+        readAndIndexFile(peopleList, indexMap, pathToFile, file);
         theLoop: while (true) {
             System.out.println("\n=== Menu ===");
             System.out.println("1. Find a person");
