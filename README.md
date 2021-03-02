@@ -1,6 +1,6 @@
 ## Simple Search Strategy
 
-Program that let you search for people using 3 search strategies. Project uses the inverted index data structure and design patterns such as Strategy and Template. It also reads data from txt file.
+Program that let you search for people using 3 search strategies. Project uses the inverted index data structure and design patterns such as strategy and template. It also reads data from txt file.
 
 Search strategies:
 ALL - displays lines from file containing all the words from the query.

@@ -1,4 +1,3 @@
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
@@ -64,7 +63,7 @@ public class SimpleSearch {
         }
     }
 
-    private static void readAndIndexFile(List<String[]> peopleList, Map<String, List<Integer>> indexMap,
+    public static void readAndIndexFile(List<String[]> peopleList, Map<String, List<Integer>> indexMap,
             String pathToFile, File file) {
         try (Scanner scanner = new Scanner(file)) {
             int lineNumber = 0;
@@ -93,7 +92,7 @@ public class SimpleSearch {
 
     }
 
-    private static void printPeople(List<String[]> peopleList) {
+    public static void printPeople(List<String[]> peopleList) {
         System.out.println("\n=== List of people ===");
         for (int i = 0; i < peopleList.size(); i++) {
             DisplayResult.display(peopleList.get(i));
