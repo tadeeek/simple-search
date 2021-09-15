@@ -24,8 +24,8 @@ public class SimpleSearch {
             System.out.println("0. Exit");
             int input = 0;
             try {
+                System.out.println("\nSelect option by typing a menu number.");
                 input = scannerInt.nextInt();
-
             } catch (InputMismatchException e) {
                 System.out.println("\nInput should be a number");
                 input = 0;
@@ -36,6 +36,7 @@ public class SimpleSearch {
                 case 1:
                     System.out.println();
                     System.out.println("Select a matching strategy: ALL, ANY, NONE");
+
                     String searchStrategy = scannerLine.nextLine();
                     StrategySearchContext strategySearchImpl = null;
                     switch (searchStrategy) {
@@ -71,6 +72,8 @@ public class SimpleSearch {
                     continue theLoop;
             }
         }
+        scannerInt.close();
+        scannerLine.close();
     }
 
     public static void readAndIndexFile(List<String[]> peopleList, Map<String, List<Integer>> indexMap,
