@@ -22,7 +22,16 @@ public class SimpleSearch {
             System.out.println("1. Find a person");
             System.out.println("2. Print all people");
             System.out.println("0. Exit");
-            int input = scannerInt.nextInt();
+            int input = 0;
+            try {
+                input = scannerInt.nextInt();
+
+            } catch (InputMismatchException e) {
+                System.out.println("\nInput should be a number");
+                input = 0;
+                scannerInt.nextLine(); // Workaround to consume \n produced by hitting enter if user typed string
+                continue theLoop;
+            }
             switch (input) {
                 case 1:
                     System.out.println();
@@ -40,7 +49,8 @@ public class SimpleSearch {
                             strategySearchImpl = new StrategySearchContext(new SearchNone());
                             break;
                         default:
-                            break;
+                            System.out.println("\nIncorrect option! Try again.");
+                            continue theLoop;
                     }
                     System.out.println();
                     System.out.println("Enter a name or email to search all suitable people.");
@@ -58,7 +68,7 @@ public class SimpleSearch {
                     break theLoop;
                 default:
                     System.out.println("\nIncorrect option! Try again.");
-                    break;
+                    continue theLoop;
             }
         }
     }
